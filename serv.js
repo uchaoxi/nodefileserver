@@ -8,7 +8,10 @@ import dayjs from 'dayjs';
 import prettyBytes from 'pretty-bytes';
 import minimist from 'minimist';
 import { detect } from 'detect-port';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const fsPromise = fs.promises;
@@ -46,11 +49,11 @@ await detect(port)
 
 
 // public静态资源
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // 设置pug为模板引擎
 app.set('view engine', 'pug');
-app.set('views', './views');
+app.set('views', path.join(__dirname, 'views'));
 
 const basePath = process.cwd();
 
@@ -85,10 +88,14 @@ app.get('(.*)', async (req, res) => {
             link: '/',
             size: '',
             updateTime: ''
-        })
+        });
         res.render('index', { fileInfo });
     } else {
-        res.download(requestPath);
+        res.download(requestPath, err => {
+            if (err) {
+                console.log(err);
+            }
+        });
     }
 });
 

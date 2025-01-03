@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon serv.js"
   },
-  "author": "yuanlei",
+  "author": "uchaoxi",
   "license": "ISC",
   "description": "",
   "dependencies": {
