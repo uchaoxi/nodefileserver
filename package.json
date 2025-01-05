@@ -1,10 +1,10 @@
 {
-  "name": "nodefileserver",
+  "name": "exchange-file-server",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
   "bin": {
-    "nodefileserver": "./serv.js"
+    "exchangefs": "./serv.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

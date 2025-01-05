@@ -1,12 +1,13 @@
 # description
-A simple file server with similar functions to httpfileserver
+A simple file server
 
 Support file download & upload
 
 
 # how to use
 ```
-npm i nodefileserver -g
+npm i exchange-file-server -g
 cd {yourpath}
-nodefileserver
+exchangefs
 ```
+If you want to specify a port, use <code>--port</code>
