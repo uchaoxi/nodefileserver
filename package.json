@@ -1,18 +1,29 @@
 {
   "name": "exchange-file-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "description": "Simple file server that supports upload & download",
   "main": "server.js",
   "type": "module",
   "bin": {
     "exchangefs": "./serv.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon serv.js"
   },
   "author": "uchaoxi",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uchaoxi/nodefileserver.git"
+  },
+  "homepage": "https://github.com/uchaoxi/nodefileserver",
+  "keywords": [
+    "file",
+    "server",
+    "http",
+    "upload",
+    "download"
+  ],
   "dependencies": {
     "dayjs": "^1.11.13",
     "detect-port": "^2.1.0",

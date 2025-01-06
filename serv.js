@@ -91,7 +91,7 @@ app.get('(.*)', async (req, res) => {
         });
         res.render('index', { fileInfo });
     } else {
-        res.download(requestPath, err => {
+        res.download(requestPath, {dotfiles: 'allow'}, err => {
             if (err) {
                 console.log(err);
             }
