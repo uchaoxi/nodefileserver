@@ -74,7 +74,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // 处理目录访问、文件下载
-app.get('(.*)', async (req, res) => {
+app.get(/(.*)/, async (req, res) => {
     const reqPath = decodeURIComponent(req.path);
     const requestPath = path.join(basePath, reqPath);
 
